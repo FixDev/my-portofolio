@@ -4,8 +4,12 @@ import Navbar from "../components/Navbar.vue";
 
 <style></style>
 <template>
-  <div class="min-h-screen bg-color-1">
+  <div class="container mx-auto">
     <Navbar />
-    <router-view />
+    <div
+      class="container antialiased leading-normal tracking-wider bg-cover px-8 lg:px-4"
+    >
+      <router-view />
+    </div>
   </div>
 </template>

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  box-sizing: border-box;
   font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #2d2424;
 }
