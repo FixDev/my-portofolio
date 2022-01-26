@@ -4,7 +4,7 @@
   >
     <img
       class="block rounded-full shadow-xl mx-auto -mt-28 h-48 w-48 bg-cover bg-center object-cover"
-      src="../assets/img/profile1.jpg"
+      src="../assets/img/profile.jpg"
       alt="Profile picture"
     />
     <h1 class="text-3xl font-bold pt-5 text-color-2">Muhammad Fikri</h1>
