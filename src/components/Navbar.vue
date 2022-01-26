@@ -1,5 +1,12 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+onMounted(() => {
+  const router = useRouter();
+  setActiveMenu(router.currentRoute.value.name);
+});
+
 const showMenu = ref(false);
 const navbarData = ref([
   {
@@ -26,6 +33,17 @@ const navbarData = ref([
 
 const toggleNav = () => {
   showMenu.value = !showMenu.value;
+};
+
+const setActiveMenu = (value) => {
+  const indexActive = navbarData.value.findIndex((obj) => obj.active === true);
+  navbarData.value[indexActive].active = false;
+
+  for (let i in navbarData.value) {
+    if (navbarData.value[i].name === value) {
+      navbarData.value[i].active = true;
+    }
+  }
 };
 </script>
 
@@ -68,11 +86,21 @@ const toggleNav = () => {
       class="flex-col mt-6 space-y-3 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-12 md:mt-0"
     >
       <li
-        class="text-color-4 hover:text-white text-lg lg:text-2xl animate-fade-in-down"
+        class="animate-fade-in-down"
         v-for="nav in navbarData"
         :key="nav.name"
       >
-        <router-link :to="nav.route">
+        <router-link
+          :aria-current="nav.active ? 'page' : undefined"
+          :to="nav.route"
+          :class="[
+            nav.active
+              ? 'bg-color-4 text-color-2'
+              : 'text-color-4 hover:text-color-2 hover:bg-color-4',
+            'px-2 py-2 rounded-md text-lg lg:text-2xl',
+          ]"
+          @click="setActiveMenu(nav.name)"
+        >
           {{ nav.name }}
         </router-link>
       </li>
