@@ -2,15 +2,17 @@
   <div>
     <div
       @click="toggleAccordion()"
-      class="flex items-center justify-between hover:cursor-pointer"
+      class="flex flex-col lg:flex-row items-center justify-between hover:cursor-pointer"
       :aria-expanded="isOpen"
       :aria-controls="`collapse${uid}`"
     >
       <div>
         <slot name="title" />
       </div>
-
-      <div class="text-xl pb-2 py-2 px-4 text-color-2">
+      <div
+        class="lg:hidden mx-auto w-full py-1 border-b-2 border-color-2 opacity-25 shadow-2xl"
+      ></div>
+      <div class="text-xl py-4 px-4 text-color-2">
         <svg
           class="w-3 transition-all duration-200 transform"
           :class="{
@@ -33,9 +35,7 @@
       </div>
     </div>
 
-    <div v-if="isOpen" :id="`collapse${uid}`">
-      <slot name="content" />
-    </div>
+    <div v-if="isOpen" :id="`collapse${uid}`"><slot name="content" /></div>
   </div>
 </template>
 

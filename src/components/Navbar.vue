@@ -51,7 +51,7 @@ const setActiveMenu = (value) => {
 
 <template>
   <nav
-    class="container px-8 py-8 mx-auto md:flex md:justify-center md:items-center"
+    class="container px-8 py-8 mx-auto my-5 md:flex md:justify-center md:items-center"
   >
     <div class="flex items-center justify-start animate-fade-in-down">
       <!-- Mobile menu button -->
