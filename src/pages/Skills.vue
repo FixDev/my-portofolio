@@ -230,7 +230,7 @@ onBeforeMount(() => {
 
 <template>
   <div class="container mx-auto max-w-4xl animate-fade-in-down">
-    <div class="flex justify-center flex-col gap-8 lg:gap-5">
+    <div class="flex justify-center flex-col gap-8 lg:gap-5 py-4 lg:py-8">
       <accordion
         v-for="skills in allSkill"
         :key="skills.name"
@@ -242,10 +242,20 @@ onBeforeMount(() => {
         <template v-slot:content>
           <Carousel :settings="settings" class="animate-fade-in-down">
             <Slide v-for="skill in skills.data" :key="skill.name">
-              <div class="carousel__item p-10 lg:p-16 bg-color-2">
-                <i
-                  :class="`devicon-${skill.icon}-plain colored text-9xl py-0 lg:py-2`"
-                ></i>
+              <div class="carousel__item p-10 lg:p-16 bg-color-2 a">
+                <suspense>
+                  <template #default>
+                    <i
+                      :class="`devicon-${skill.icon}-plain colored text-9xl py-0 lg:py-2`"
+                    ></i>
+                  </template>
+                  <template #fallback>
+                    <div
+                      class="animate-pulse p-10 lg:p-16 rounded-lg bg-color-4"
+                    ></div>
+                  </template>
+                </suspense>
+
                 <div class="py-0 lg:py-10">
                   <h2 class="text-2xl font-bold py-2 text-color-4">
                     {{ skill.name }}
