@@ -53,7 +53,7 @@ const setActiveMenu = (value) => {
   <nav
     class="container px-8 py-8 mx-auto md:flex md:justify-center md:items-center"
   >
-    <div class="flex items-center justify-start">
+    <div class="flex items-center justify-start animate-fade-in-down">
       <!-- Mobile menu button -->
       <div
         @click="toggleNav"
