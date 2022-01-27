@@ -66,9 +66,9 @@
       </a>
     </div>
 
-    <p class="text-2xl text-center px-14 py-5 text-color-2">
-      Hi! I am Software Engineer. Fast learner, problem solver, and handsome
-      &#128102;.
+    <p class="text-xl lg:text-2xl text-center px-14 py-5 text-color-2">
+      Hi! I am Software Engineer &#128187;. IT enthusiast, fast learner, and
+      problem solver.
     </p>
   </div>
 </template>

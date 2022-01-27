@@ -229,8 +229,8 @@ onBeforeMount(() => {
 </style>
 
 <template>
-  <div class="container mx-auto max-w-4xl animate-fade-in-down">
-    <div class="flex justify-center flex-col gap-8 lg:gap-5 py-4 lg:py-8">
+  <div class="container mx-auto max-w-4xl animate-fade-in-down -my-4">
+    <div class="flex justify-center flex-col pb-9 gap-8 lg:gap-5">
       <accordion
         v-for="skills in allSkill"
         :key="skills.name"
