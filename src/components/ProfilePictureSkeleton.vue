@@ -7,7 +7,7 @@
     ></div>
     <div class="my-3">
       <div
-        class="animate-pulse bg-color-2 mx-auto w-80 rounded-sm h-3 mt-10"
+        class="animate-pulse bg-color-2 mx-auto w-60 rounded-sm h-3 mt-10"
       ></div>
       <div
         class="animate-pulse bg-color-2 mx-auto w-60 rounded-sm h-3 mt-4"
