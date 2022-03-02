@@ -3,10 +3,16 @@
     class="max-w-4xl flex flex-col items-center h-auto flex-wrap mx-auto my-28 lg:my-32 bg-color-4 rounded-lg animate-fade-in-down"
   >
     <img
+      v-show="state.isLoaded"
+      @load="onLoad"
       class="block rounded-full shadow-xl mx-auto -mt-28 h-48 w-48 bg-cover bg-center object-cover"
       src="/src/assets/img/profile.jpg"
       alt="Profile picture"
     />
+    <div
+      v-show="!state.isLoaded"
+      class="animate-pulse border-solid border-2 border-color-2 block rounded-full shadow-xl mx-auto -mt-28 h-48 w-48 bg-color-4 bg-cover bg-center object-cover"
+    ></div>
     <h1 class="text-3xl font-bold pt-5 text-color-2">Muhammad Fikri</h1>
     <h2 class="text-xl font-bold pt-2 text-color-2">Software Engineer</h2>
     <div
@@ -63,6 +69,17 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import { reactive } from "vue";
+
+const state = reactive({
+  isLoaded: false,
+});
+
+const onLoad = () => {
+  state.isLoaded = true;
+  return;
+};
+</script>
 
 <style></style>
